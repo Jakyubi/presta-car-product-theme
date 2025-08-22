@@ -47,7 +47,7 @@
 }
 
 .product-flag.discount {
-    background-color: #c9c9c9 !important;
+    background-color: #ddd !important;
     color: #000 !important; 
     font-weight: 400 !important;
 }
@@ -67,4 +67,20 @@
 .product-discount{
     font-weight: 400;
     font-size: 1.4rem;
+}
+
+.product-buy-before-info{
+    display: inline-block;
+    color:#000;
+    background-color: #ddd;
+    padding: 15px;
+}
+
+.add-to-cart{
+    background-color: #000;
+    font-weight: 400;
+}
+
+.add-to-cart:hover{
+    background-color: #363636;
 }

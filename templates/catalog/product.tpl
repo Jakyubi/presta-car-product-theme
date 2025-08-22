@@ -58,8 +58,8 @@
           {/block}
 
           <div class="product-information">
-            {block name='product_description_short'}
-              <div id="product-description-short-{$product.id}" class="product-description">{$product.description_short nofilter}</div>
+            {block name='product_buy_before_info'}
+              <div class="product-buy-before-info">Orders paid by 12:00 are shipped the same day</div>
             {/block}
 
             {if $product.is_customizable && count($product.customizations.fields)}
