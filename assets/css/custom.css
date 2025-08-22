@@ -1,0 +1,26 @@
+.breadcrumb-separator {
+    padding: 0 0.5rem;
+    color: #000;
+    font-size: 1.4rem;
+}
+
+.breadcrumb,
+.breadcrumb a,
+.breadcrumb span {
+    font-size: 1.2rem;
+}
+
+#wrapper .breadcrumb li::after,
+#wrapper .breadcrumb li:last-child,
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "" !important;
+}
+
+.breadcrumb ol li a,
+.breadcrumb ol li .breadcrumb-separator {
+    color: #7a7a7a !important;
+}
+
+.breadcrumb ol li:last-child span {
+    color: #000 !important;
+}
