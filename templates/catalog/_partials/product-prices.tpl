@@ -1,38 +1,30 @@
 
 {if $product.show_price}
   <div class="product-prices js-product-prices">
-    {block name='product_discount'}
-      {if $product.has_discount}
-        <div class="product-discount">
-          {hook h='displayProductPriceBlock' product=$product type="old_price"}
-          <span class="regular-price">{$product.regular_price}</span>
-        </div>
-      {/if}
-    {/block}
+
 
     {block name='product_price'}
       <div
         class="product-price h5 {if $product.has_discount}has-discount{/if}">
-
-        <div class="current-price">
-          <span class='current-price-value' content="{$product.rounded_display_price}">
-            {capture name='custom_price'}{hook h='displayProductPriceBlock' product=$product type='custom_price' hook_origin='product_sheet'}{/capture}
-            {if '' !== $smarty.capture.custom_price}
-              {$smarty.capture.custom_price nofilter}
-            {else}
-              {$product.price}
+        <div class="product-prices-before-after">
+          <div class="current-price">
+            <span class='current-price-value' content="{$product.rounded_display_price}">
+              {capture name='custom_price'}{hook h='displayProductPriceBlock' product=$product type='custom_price' hook_origin='product_sheet'}{/capture}
+              {if '' !== $smarty.capture.custom_price}
+                {$smarty.capture.custom_price nofilter}
+              {else}
+                {$product.price}
+              {/if}
+            </span>
+          </div>
+          {block name='product_discount'}
+            {if $product.has_discount}
+              <div class="product-discount">
+                {hook h='displayProductPriceBlock' product=$product type="old_price"}
+                <span class="regular-price">{$product.regular_price}</span>
+              </div>
             {/if}
-          </span>
-
-          {if $product.has_discount}
-            {if $product.discount_type === 'percentage'}
-              <span class="discount discount-percentage">{l s='Save %percentage%' d='Shop.Theme.Catalog' sprintf=['%percentage%' => $product.discount_percentage_absolute]}</span>
-            {else}
-              <span class="discount discount-amount">
-                  {l s='Save %amount%' d='Shop.Theme.Catalog' sprintf=['%amount%' => $product.discount_to_display]}
-              </span>
-            {/if}
-          {/if}
+          {/block}
         </div>
 
         {block name='product_unit_price'}
@@ -40,6 +32,7 @@
             <p class="product-unit-price sub">{$product.unit_price_full}</p>
           {/if}
         {/block}
+
       </div>
     {/block}
 

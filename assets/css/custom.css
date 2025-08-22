@@ -45,3 +45,26 @@
     width: 40px;
     height: 40px;
 }
+
+.product-flag.discount {
+    background-color: #c9c9c9 !important;
+    color: #000 !important; 
+    font-weight: 400 !important;
+}
+
+.product-prices-before-after{
+    display:flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.current-price{
+    font-weight: 800;
+    font-size: 2rem;
+    color: #000;
+}
+
+.product-discount{
+    font-weight: 400;
+    font-size: 1.4rem;
+}
