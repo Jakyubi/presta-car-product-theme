@@ -17,6 +17,13 @@
           </button>
         </div>
 
+        <div class="vertical-line"> </div>
+        
+        <div class="product-installment">
+          <span class="product-black-bold-text">Calculate your installment</span>
+          <span class="product-gray-text">The installment is only ...</span>        
+        </div>
+
         {hook h='displayProductActions' product=$product}
       </div>
     {/block}

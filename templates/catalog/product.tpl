@@ -101,9 +101,55 @@
                   {/block}
 
                   {block name='product_additional_info'}
-                    {include file='catalog/_partials/product-additional-info.tpl'}
+
+                    <div class="product-delivery-time-contact">
+                      <div class="product-gray-text">Delivery time: <span class="product-black-bold-text">2-3 dni</span></div>
+                      <div class="product-gray-text">Ask about the product: <span class="product-black-bold-text">mail@mail.com</span></div>
+                    </div>
+
+                    <div class="product-list-info">
+                      <ul>
+                        <li class="product-gray-text">
+                        <img class="cap-gray" src="https://www.svgrepo.com/show/508373/baseball-cap.svg" alt="cap" width="24" height="24">
+                        Fast delivery</li>
+
+                        <li class="product-gray-text">
+                        <img class="cap-gray" src="https://www.svgrepo.com/show/508373/baseball-cap.svg" alt="cap" width="24" height="24">
+                        30-day warranty</li>
+
+                        <li class="product-gray-text">
+                        <img class="cap-gray" src="https://www.svgrepo.com/show/508373/baseball-cap.svg" alt="cap" width="24" height="24">
+                        Personal pickup available within 15 minutes</li>
+
+                        <li class="product-gray-text">
+                        <img class="cap-gray" src="https://www.svgrepo.com/show/508373/baseball-cap.svg" alt="cap" width="24" height="24">
+                        30 days to return</li>
+                      </ul>
+                    </div>
+
+                    <div class="product-delivery-payment-icons">
+                      <div class="product-delivery-payment-icon"><img src="" alt="DPD"></div>
+                      <div class="product-delivery-payment-icon"><img src="" alt="InPost"></div>
+                      <div class="product-delivery-payment-icon"><img src="" alt="Blik"></div>
+                      <div class="product-delivery-payment-icon"><img src="" alt="Mastercard"></div>
+                      <div class="product-delivery-payment-icon"><img src="" alt="Visa"></div>
+                      <div class="product-delivery-payment-icon"><img src="" alt="Przelewy24"></div>
+                    </div>
+
                   {/block}
 
+                  <div class="product-social">
+                    <span class="product-gray-text">Share:</span>
+                    <a href="https://www.facebook.com">
+                      <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/facebook.svg"
+                      class="product-icon-invert" width="30" height="30" alt="Facebook">
+                    </a>
+
+                    <a href="https://www.linkedin.com">
+                      <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/linkedin.svg" 
+                      class="product-icon-invert" width="30" height="30" alt="LinkedIn">
+                    </a>
+                  </div>
                   {* Input to refresh product HTML removed, block kept for compatibility with themes *}
                   {block name='product_refresh'}{/block}
                 </form>
