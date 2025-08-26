@@ -103,7 +103,7 @@
                   {block name='product_additional_info'}
 
                     <div class="product-delivery-time-contact">
-                      <div class="product-gray-text">Delivery time: <span class="product-black-bold-text">2-3 dni</span></div>
+                      <div class="product-gray-text">Delivery time: <span class="product-black-bold-text">2-3 days</span></div>
                       <div class="product-gray-text">Ask about the product: 
                         <span class="product-black-bold-text"><a href="mailto:mail@mail.com" class="product-black-bold-text">mail@mail.com</a></span>
                       </div>
@@ -167,12 +167,12 @@
 
       {if $product.features}
       <div class="product-features-wrapper">
-        <h3>Parametry produktu</h3>
+        <h3>Product attributes</h3>
         <table class="product-parameters">
           <thead>
             <tr>
-              <th class="product-feature-name">Parametr</th>
-              <th class="product-feature-value">Wartość</th>
+              <th class="product-feature-name">Attributes</th>
+              <th class="product-feature-value">Value</th>
             </tr>
           </thead>
           <tbody>
