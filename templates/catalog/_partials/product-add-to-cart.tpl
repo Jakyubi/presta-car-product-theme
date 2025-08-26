@@ -1,6 +1,5 @@
 <div class="product-add-to-cart js-product-add-to-cart">
   {if !$configuration.is_catalog}
-
     {block name='product_quantity'}
       <div class="product-quantity clearfix">
         <div class="add">

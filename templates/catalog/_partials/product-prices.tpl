@@ -1,8 +1,6 @@
 
 {if $product.show_price}
   <div class="product-prices js-product-prices">
-
-
     {block name='product_price'}
       <div
         class="product-price h5 {if $product.has_discount}has-discount{/if}">
@@ -59,6 +57,5 @@
     {/block}
 
     {hook h='displayProductPriceBlock' product=$product type="weight" hook_origin='product_sheet'}
-
   </div>
 {/if}
