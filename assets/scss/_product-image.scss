@@ -20,8 +20,8 @@
   }
 }
 
-.product-flag.discount {
-  background-color: variables.$gray-light !important;
-  color: variables.$black !important;
-  font-weight: 400 !important;
+ul.product-flags li.product-flag.discount {
+  background-color: variables.$gray-light;
+  color: variables.$black;
+  font-weight: 400;
 }

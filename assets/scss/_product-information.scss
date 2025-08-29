@@ -10,19 +10,20 @@
   align-items: center;
 }
 
-.add-to-cart {
+div.product-add-to-cart button.add-to-cart,
+div.product-add-to-cart button.add-to-cart {
   background-color: #000;
   font-weight: 400;
   margin-top: 10px;
+
+  &:hover,
+  &:active {
+    background-color: #363636;
+  }
 }
 
-.add-to-cart:hover,
-.add-to-cart:active {
-  background-color: #363636 !important;
-}
-
-.wishlist-button-add {
-  display: none !important;
+div.product-add-to-cart .wishlist-button-add {
+  display: none;
 }
 
 .product-installment {

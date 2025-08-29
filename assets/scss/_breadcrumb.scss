@@ -6,7 +6,7 @@
   font-size: 1.5rem;
 }
 
-.breadcrumb {
+#wrapper nav.breadcrumb {
   font-size: 1.25rem;
   a,
   span {
@@ -17,13 +17,13 @@
     li {
       a,
       .breadcrumb-separator {
-        color: variables.$gray !important;
+        color: variables.$gray;
       }
       &:last-child span {
         color: variables.$black;
       }
       &::after {
-        content: "" !important;
+        content: "";
       }
     }
   }
