@@ -1,0 +1,30 @@
+@use "variables";
+
+.breadcrumb-separator {
+  padding: 0 0.5rem;
+  color: variables.$black;
+  font-size: 1.5rem;
+}
+
+.breadcrumb {
+  font-size: 1.25rem;
+  a,
+  span {
+    font-size: 1.25rem;
+  }
+
+  ol {
+    li {
+      a,
+      .breadcrumb-separator {
+        color: variables.$gray !important;
+      }
+      &:last-child span {
+        color: variables.$black;
+      }
+      &::after {
+        content: "" !important;
+      }
+    }
+  }
+}

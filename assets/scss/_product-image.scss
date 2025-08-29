@@ -1,0 +1,27 @@
+@use "variables";
+
+#main .scroll-box-arrows {
+  top: 50%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  transform: translateY(-50%);
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    pointer-events: all;
+    background: variables.$black-opacity;
+    color: variables.$white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.product-flag.discount {
+  background-color: variables.$gray-light !important;
+  color: variables.$black !important;
+  font-weight: 400 !important;
+}
