@@ -5,7 +5,7 @@
   font-family: Arial, sans-serif;
 
   h3 {
-    font-size: 1.25em;
+    font-size: 1.25rem;
     margin-bottom: 10px;
     color: variables.$gray-dark;
   }
@@ -25,11 +25,9 @@
   th {
     background-color: variables.$gray-lighter;
     font-weight: 600;
-    color: #222;
+    color: variables.$black;
   }
-}
 
-.product-parameters {
   tbody tr:nth-child(odd) {
     background-color: variables.$white;
   }
@@ -43,10 +41,11 @@
   }
 }
 
-.product-features-wrapper .product-feature-name {
-  text-align: right;
-}
-
-.product-features-wrapper .product-feature-value {
-  text-align: left;
+.product-features-wrapper {
+  .product-feature-name {
+    text-align: right;
+  }
+  .product-feature-value {
+    text-align: left;
+  }
 }
