@@ -58,8 +58,8 @@
           {/block}
 
           <div class="product-information">
-            {block name='product_description_short'}
-              <div id="product-description-short-{$product.id}" class="product-description">{$product.description_short nofilter}</div>
+            {block name='product_buy_before_info'}
+              <div class="product-buy-before-info">Orders paid by 12:00 are shipped the same day</div>
             {/block}
 
             {if $product.is_customizable && count($product.customizations.fields)}
@@ -101,9 +101,57 @@
                   {/block}
 
                   {block name='product_additional_info'}
-                    {include file='catalog/_partials/product-additional-info.tpl'}
+
+                    <div class="product-delivery-time-contact">
+                      <div class="product-gray-text">Delivery time: <span class="product-black-bold-text">2-3 days</span></div>
+                      <div class="product-gray-text">Ask about the product: 
+                        <span class="product-black-bold-text"><a href="mailto:mail@mail.com" class="product-black-bold-text">mail@mail.com</a></span>
+                      </div>
+                    </div>
+
+                    <div class="product-list-info">
+                      <ul>
+                        <li class="product-gray-text">
+                        <img class="cap-gray" src="https://www.svgrepo.com/show/508373/baseball-cap.svg" alt="cap" width="24" height="24">
+                        Fast delivery</li>
+
+                        <li class="product-gray-text">
+                        <img class="cap-gray" src="https://www.svgrepo.com/show/508373/baseball-cap.svg" alt="cap" width="24" height="24">
+                        30-day warranty</li>
+
+                        <li class="product-gray-text">
+                        <img class="cap-gray" src="https://www.svgrepo.com/show/508373/baseball-cap.svg" alt="cap" width="24" height="24">
+                        Personal pickup available within 15 minutes</li>
+
+                        <li class="product-gray-text">
+                        <img class="cap-gray" src="https://www.svgrepo.com/show/508373/baseball-cap.svg" alt="cap" width="24" height="24">
+                        30 days to return</li>
+                      </ul>
+                    </div>
+
+                    <div class="product-delivery-payment-icons">
+                      <div class="product-delivery-payment-icon"><img src="" alt="DPD"></div>
+                      <div class="product-delivery-payment-icon"><img src="" alt="InPost"></div>
+                      <div class="product-delivery-payment-icon"><img src="" alt="Blik"></div>
+                      <div class="product-delivery-payment-icon"><img src="" alt="Mastercard"></div>
+                      <div class="product-delivery-payment-icon"><img src="" alt="Visa"></div>
+                      <div class="product-delivery-payment-icon"><img src="" alt="Przelewy24"></div>
+                    </div>
+
                   {/block}
 
+                  <div class="product-social">
+                    <span class="product-gray-text">Share:</span>
+                    <a href="https://www.facebook.com">
+                      <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/facebook.svg"
+                      class="product-icon-invert" width="30" height="30" alt="Facebook">
+                    </a>
+
+                    <a href="https://www.linkedin.com">
+                      <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/linkedin.svg" 
+                      class="product-icon-invert" width="30" height="30" alt="LinkedIn">
+                    </a>
+                  </div>
                   {* Input to refresh product HTML removed, block kept for compatibility with themes *}
                   {block name='product_refresh'}{/block}
                 </form>
@@ -114,92 +162,30 @@
             {block name='hook_display_reassurance'}
               {hook h='displayReassurance'}
             {/block}
-
-            {block name='product_tabs'}
-              <div class="tabs">
-                <ul class="nav nav-tabs" role="tablist">
-                  {if $product.description}
-                    <li class="nav-item">
-                       <a
-                         class="nav-link{if $product.description} active js-product-nav-active{/if}"
-                         data-toggle="tab"
-                         href="#description"
-                         role="tab"
-                         aria-controls="description"
-                         {if $product.description} aria-selected="true"{/if}>{l s='Description' d='Shop.Theme.Catalog'}</a>
-                    </li>
-                  {/if}
-                  <li class="nav-item">
-                    <a
-                      class="nav-link{if !$product.description} active js-product-nav-active{/if}"
-                      data-toggle="tab"
-                      href="#product-details"
-                      role="tab"
-                      aria-controls="product-details"
-                      {if !$product.description} aria-selected="true"{/if}>{l s='Product Details' d='Shop.Theme.Catalog'}</a>
-                  </li>
-                  {if $product.attachments}
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        data-toggle="tab"
-                        href="#attachments"
-                        role="tab"
-                        aria-controls="attachments">{l s='Attachments' d='Shop.Theme.Catalog'}</a>
-                    </li>
-                  {/if}
-                  {foreach from=$product.extraContent item=extra key=extraKey}
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        data-toggle="tab"
-                        href="#extra-{$extraKey}"
-                        role="tab"
-                        aria-controls="extra-{$extraKey}">{$extra.title}</a>
-                    </li>
-                  {/foreach}
-                </ul>
-
-                <div class="tab-content" id="tab-content">
-                 <div class="tab-pane fade in{if $product.description} active js-product-tab-active{/if}" id="description" role="tabpanel">
-                   {block name='product_description'}
-                     <div class="product-description">{$product.description nofilter}</div>
-                   {/block}
-                 </div>
-
-                 {block name='product_details'}
-                   {include file='catalog/_partials/product-details.tpl'}
-                 {/block}
-
-                 {block name='product_attachments'}
-                   {if $product.attachments}
-                    <div class="tab-pane fade in" id="attachments" role="tabpanel">
-                       <section class="product-attachments">
-                         <p class="h5 text-uppercase">{l s='Download' d='Shop.Theme.Actions'}</p>
-                         {foreach from=$product.attachments item=attachment}
-                           <div class="attachment">
-                             <h4><a href="{url entity='attachment' params=['id_attachment' => $attachment.id_attachment]}">{$attachment.name}</a></h4>
-                             <p>{$attachment.description}</p>
-                             <a href="{url entity='attachment' params=['id_attachment' => $attachment.id_attachment]}">
-                               {l s='Download' d='Shop.Theme.Actions'} ({$attachment.file_size_formatted})
-                             </a>
-                           </div>
-                         {/foreach}
-                       </section>
-                     </div>
-                   {/if}
-                 {/block}
-
-                 {foreach from=$product.extraContent item=extra key=extraKey}
-                 <div class="tab-pane fade in {$extra.attr.class}" id="extra-{$extraKey}" role="tabpanel" {foreach $extra.attr as $key => $val} {$key}="{$val}"{/foreach}>
-                   {$extra.content nofilter}
-                 </div>
-                 {/foreach}
-              </div>
-            </div>
-          {/block}
         </div>
       </div>
+
+      {if $product.features}
+      <div class="product-features-wrapper">
+        <h3>Product attributes</h3>
+        <table class="product-parameters">
+          <thead>
+            <tr>
+              <th class="product-feature-name">Attributes</th>
+              <th class="product-feature-value">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            {foreach from=$product.features item=feature}
+              <tr>
+                <td class="product-feature-name">{$feature.name}</td>
+                <td class="product-feature-value">{$feature.value}</td>
+              </tr>
+            {/foreach}
+          </tbody>
+        </table>
+      </div>
+      {/if}
     </div>
 
     {block name='product_accessories'}

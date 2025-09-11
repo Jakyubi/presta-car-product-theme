@@ -1,0 +1,18 @@
+@use "variables";
+
+.product-prices-before-after {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.current-price {
+  font-weight: 800;
+  font-size: 2rem;
+  color: variables.$black;
+}
+
+.product-discount {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
